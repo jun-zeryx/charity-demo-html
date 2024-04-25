@@ -1,133 +1,464 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="lrt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#000000</title>
-    <link type="image/x-icon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGD4z0ABYBw1gGE0DBhGw4BhWIQBAE5OEAELnjVHAAAAAElFTkSuQmCC">
-    <style>
-        :root {
-            --color: #000000;
-            --color-transparent: #00000022;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        ::selection {
-            background: var(--color-transparent);
-        }
+  <title>Charitfix - Charity & Donation HTML Template</title>
+  <link rel="icon" type="image/x-icon" sizes="20x20" href="assets/images/icon/favicon.png">
 
-        html,
-        body {
-            background: var(--color);
-            height: 100%;
-            margin: 0;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        #color {
-            background: white;
-            color: var(--color);
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 2.25rem 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-            cursor: text;
-        }
-    </style>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-5.3.0.min.css">
+  <!-- fonts & icon -->
+  <link rel="stylesheet" type="text/css" href="assets/css/remixicon.css">
+  <!-- Plugin -->
+  <link rel="stylesheet" type="text/css" href="assets/css/plugin.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/main-style.css">
+  <!-- RTL CSS::When Need RTL Uncomments File -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/rtl.css"> -->
 </head>
 
 <body>
-    <p id="color">#000000</p>
-    <script>
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
+  <header>
+    <div class="header-area-two header-transparent">
+      <div class="main-header header-sticky">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                <div class="header-left d-flex align-items-center justify-content-between">
+                  <!-- Logo-->
+                  <div class="logo logo-large light-logo">
+                    <a href="index.html"><img src="assets/images/logo/dark.png" alt="logo"></a>
+                  </div>
+                  <!-- Logo Mobile-->
+                  <div class="logo logo-mobile light-logo">
+                    <a href="index.html"><img src="assets/images/icon/favicon.png" alt="img"></a>
+                  </div>
+                </div>
 
-        function hslToHex(h, s, l) {
-            h /= 360;
-            s /= 100;
-            l /= 100;
-            var r = void 0,
-                g = void 0,
-                b = void 0;
-            if (s === 0) {
-                r = g = b = l; // achromatic
-            } else {
-                var hue2rgb = function hue2rgb(p, q, t) {
-                    if (t < 0) t += 1;
-                    if (t > 1) t -= 1;
-                    if (t < 1 / 6) return p + (q - p) * 6 * t;
-                    if (t < 1 / 2) return q;
-                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-                    return p;
-                };
-                var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                var p = 2 * l - q;
-                r = hue2rgb(p, q, h + 1 / 3);
-                g = hue2rgb(p, q, h);
-                b = hue2rgb(p, q, h - 1 / 3);
-            }
-            var toHex = function toHex(x) {
-                var hex = Math.round(x * 255).toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            };
-            return '#' + toHex(r) + toHex(g) + toHex(b);
-        }
+                <!-- Main-menu for desktop -->
+                <div class="main-menu d-none d-lg-block">
+                  <nav>
+                    <ul class="listing" id="navigation">
+                      <li class="single-list"><a href="#" class="single">Home</a></li>
+                      <li class="single-list"><a href="#donate" class="single">Donate</a></li>
+                      <li class="single-list"><a href="#about" class="single">About</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <!-- Mobile Menu -->
+              <div class="div">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Hero area S t a r t-->
+    <section class="hero-area-two">
+      <div class="single-slider hero-padding-two">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 my-auto">
+              <div class="hero-caption mb-20">
+                <p class="key-title font-700 mb-20 wow fadeInUp" data-wow-delay="0.0s">Empower Change in Palestine Today
+                </p>
+                <h1 class="title font-700 wow fadeInUp" data-wow-delay="0.1s">Help Us Now</h1>
+                <p class="pera mx-width-780 wow fadeInUp" data-wow-delay="0.2s">We are committed to providing urgent
+                  relief and sustainable support to Palestinian communities.
+                  Join us in Supporting Resilience and Renewal in Palestine. Every bit matters, you can make a
+                  difference now</p>
+                <div class="d-flex gap-20 flex-wrap">
+                  <a href="#donate" class="btn-primary-fill hero-btn wow fadeInUp" data-wow-delay="0.3s">Donate
+                    Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6">
+              <div class="d-flex gap-22 align-items-center justify-content-end">
+                <div class="hero-image position-relative d-none d-lg-block">
+                  <img src="assets/images/palestine/1/5.jpg" alt="img" class="w-100 tilt-effect wow fadeInLeft"
+                    data-wow-delay="0.1s">
+                </div>
+                <div class="hero-image position-relative d-none d-lg-block">
+                  <img src="assets/images/palestine/1/2.jpg" alt="img" class="w-100 tilt-effect wow fadeInRight"
+                    data-wow-delay="0.1s">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End-of Hero-->
 
-        window.onload = function () {
-            let stopProp = function (ev) {
-                ev.stopPropagation();
-            }
+    <!-- helpful area S t a r t-->
+    <section class="helpful-area-two section-padding">
+      <div class="container">
+        <div class="row gy-24">
+          <div class="col-xl-4 col-md-6 col-lg-6">
+            <div class="helpful-card-two wow fadeInUp" data-wow-delay="0.0s">
+              <div class="helpful-card-icon">
+                <i class="ri-book-open-line"></i>
+              </div>
+              <div class="helpful-card-caption">
+                <h4 class="caption-title">Our Mission</h4>
+                <p class="caption-para">Our mission is to support the resilience and renewal of Palestinian communities
+                  through comprehensive humanitarian aid and development programs. We strive for a future where every
+                  individual in Palestine has access to the resources they need to thrive.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 col-lg-6">
+            <div class="helpful-card-two wow fadeInUp" data-wow-delay="0.1s">
+              <div class="helpful-card-icon">
+                <i class="ri-first-aid-kit-line"></i>
+              </div>
+              <div class="helpful-card-caption">
+                <h4 class="caption-title">Our Work</h4>
+                <p class="caption-para">We were born out of a vision to address the immediate needs and long-term
+                  challenges faced by Palestinians. With roots deeply embedded in the communities we serve, we have
+                  grown from a small initiative into a beacon of hope for thousands.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 col-lg-6">
+            <div class="helpful-card-two wow fadeInUp" data-wow-delay="0.3s">
+              <div class="helpful-card-icon">
+                <i class="ri-global-line"></i>
+              </div>
+              <div class="helpful-card-caption">
+                <h4 class="caption-title">Our Team</h4>
+                <p class="caption-para">Our dedicated team is driven by a passion to make a difference. From experienced
+                  development professionals to committed volunteers, meet the people who power our efforts every day.
+                  Rebuilding palestine one step at a time and helping those in need along the way.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End-of helpful-->
 
-            var colorElement = document.getElementById("color");
-            colorElement.addEventListener("click", stopProp, false);
-            colorElement.addEventListener("mousedown", stopProp, false);
+    <!-- Donation Payment S t a r t -->
+    <div class="donation-payment section-padding" id="donate">
+      <div class="container">
+        <div class="row g-24 justify-content-between">
+          <div class="col-lg-7">
+            <div class="section-tittle mb-50">
+              <span class="sub-tittle text-capitalize font-700">Help us make a difference now</span>
+              <h2 class="title mb-20 font-700">Stand With Gaza: Make A Difference Today</h2>
+              <p class="pera">Civilians are enduring immense suffering due to the ongoing conflict.
+                Over 3 million individuals in Gaza and the West Bank urgently require humanitarian aid and protection.
+                Your support can provide crucial assistance to families affected by this dire situation.</p>
+            </div>
+            <!-- Payment -->
+            <div class="card-style box-shadow border-0">
+              <ul class="selectPricing mb-20">
+                <li class="listItem" data-amount="20">$20</li>
+                <li class="listItem " data-amount="40">$40</li>
+                <li class="listItem" data-amount="60">$60</li>
+                <li class="listItem" data-amount="80">$80</li>
+                <li class="listItem" data-amount="100">$100</li>
+              </ul>
+              <form action="#">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="contact-form mb-24">
+                      <label class="contact-label">Amount</label>
+                      <input class="form-control contact-input left_default_amount" type="number" min="1" value="50"
+                        placeholder="$50">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="contact-form mb-24">
+                      <label class="contact-label">Name</label>
+                      <input class="form-control contact-input" type="text" placeholder="e.g John">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="contact-form mb-24">
+                      <label class="contact-label">Email</label>
+                      <input class="form-control contact-input" type="email" placeholder="e.g example@gmail.com">
+                    </div>
+                  </div>
+                </div>
 
-            var setFavicon = function (hex) {
-                var canvas = document.createElement('canvas');
-                canvas.width = 16;
-                canvas.height = 16;
-                var ctx = canvas.getContext('2d');
-                ctx.fillStyle = hex;
-                ctx.fillRect(0, 0, 16, 16);
-                document.getElementsByTagName('link')[0].href = canvas.toDataURL("image/x-icon");
-            }
+                <div class="form-group col-12 payment-gateway-wrapper mt-10">
+                  <div class="remember-me terms-condition">
+                    <label>
+                      <input class="checkbox-style" type="checkbox" value="remember" name="remember">
+                      <small>I agree to all the
+                        <a href="terms-condition.html">
+                          <span>Terms</span></a> and <a href="privacy-policy.html"><span>Privacy policy</span>
+                        </a>
+                      </small>
+                      <span class="checkmark-style"></span>
+                    </label>
+                  </div>
+                  <a href="javascript:void(0)" class="btn-primary-submit">Donate Now</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-5 col-md-7">
+            <div class="hero-image position-relative d-none d-lg-block">
+              <img src="assets/images/palestine/1/1.jpg" alt="img" class="w-100 tilt-effect wow fadeInRight"
+                data-wow-delay="0.1s">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End-of Donation Payment -->
 
-            var setRandomColor = function setRandomColor() {
-                var h = void 0,
-                    s = void 0,
-                    l = void 0;
+    <!-- About us Area S t a r t -->
+    <section class="about-area" id="about">
+      <div class="container">
+        <div class="row g-24 justify-content-between">
+          <div class="col-xl-6 col-lg-6">
+            <div class="section-tittle mb-50">
+              <span class="sub-tittle text-capitalize font-700">About us</span>
+              <h2 class="title mb-20 font-700">Programs and Projects</h2>
+              <p class="pera">Our initiatives focus on critical areas such as health, education, access to clean water,
+                and emergency relief. Each project is designed to empower local communities, promote self-sufficiency,
+                and rebuild hope.</p>
+            </div>
+            <div class="about-info">
+              <div class="row">
+                <div class="col-lg-10">
+                  <div class="d-flex gap-20">
+                    <div class="info-icon">
+                      <i class="ri-hand-heart-line"></i>
+                    </div>
+                    <div class="info-content">
+                      <h4 class="title">Quick Fundraising</h4>
+                      <p class="pera">Help fund our cause to help those in need.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <div class="divider"></div>
+                </div>
+                <div class="col-lg-10 mb-20">
+                  <div class="d-flex gap-20">
+                    <div class="info-icon">
+                      <i class="ri-user-line"></i>
+                    </div>
 
-                h = randomInt(0, 359);
-                s = randomInt(55, 75);
-                l = randomInt(40, 60);
+                    <div class="info-content">
+                      <h4 class="title">Join Our Team</h4>
+                      <p class="pera">Become part of making a difference.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-6">
+            <div class="position-relative">
+              <div class="play-button">
+                <a id="play-video" class="video-play-button" href="javascript:void(0)">
+                  <span></span>
+                </a>
+                <div id="video-overlay" class="video-overlay">
+                  <a class="video-overlay-close">&times;</a>
+                </div>
+              </div>
+              <img class="w-100 " src="assets/images/palestine/1/12.jpg" alt="image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End-of About us Area -->
 
-                document.documentElement.style.setProperty('--color', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
-                var hex = hslToHex(h, s, l);
-                document.title = hex;
-                colorElement.innerHTML = hex;
-                document.documentElement.style.setProperty('--color-transparent', hex + '22');
+    <!-- Testimonial S t a r t-->
+    <section class="testimonial-section-three section-padding">
+      <div class="container">
+        <div class="row gy-24 align-items-center">
+          <div class="col-xl-6">
+            <!-- Section Tittle -->
+            <div class="section-tittle">
+              <span class="sub-tittle text-capitalize font-600">Silent Cries</span>
+              <h2 class="title font-700">The Silent Pain of the Palestinian War</h2>
+              <p class="pera">In the shadow of the Palestinian war, millions are displaced with nowhere to turn, each tear a desperate cry to the world. Children robbed of their laughter, adults stripped of their homes, and the elderly robbed of their peace. They are forced to face the onslaught of war, bearing the pain and fear with helplessness.</p>
+              <br>
+              <p class="pera">The Palestinian war is not just a heap of numbers and data; it's shattered families and broken lives. Countless innocent lives have fallen victim to the war, and they need our attention and help. Let's embrace compassion and extend a helping hand to bring warmth and hope to them.</p>
+              <br>
+              <p class="pera">According to the UN Refugee Agency, the Palestinian war has displaced hundreds of thousands, including a significant number of children and the elderly. The destruction caused by the war extends beyond homes and infrastructure to the trauma inflicted upon people's hearts.</p>
+              <br>
+              <p class="pera">Let's take action together to support Palestinian refugees. Your donations will provide them with urgent assistance and help rebuild hope. Let our love translate into action and contribute to peace and humanitarianism.</p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-9">
+            <div class="position-relative">
+              <div class="testimonial-slider-three-active flex">
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/1/7.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/1/8.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/1/9.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/1/10.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/1/13.jpg" alt="image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End-of Testimonial -->
 
-                setFavicon(hex);
-            };
-            setRandomColor();
+    <!-- Testimonial S t a r t-->
+    <section class="testimonial-section-three section-padding">
+      <div class="container">
+        <div class="row gy-24 align-items-center">
+          <div class="col-xl-6 col-lg-9">
+            <div class="position-relative">
+              <div class="testimonial-slider-three-active flex">
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/2/1.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/2/2.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/2/3.jpg" alt="image">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <!-- Section Tittle -->
+            <div class="section-tittle">
+              <span class="sub-tittle text-capitalize font-600">Guardians of Hope</span>
+              <h2 class="title font-700">Humanitarian Crisis in the Palestinian War</h2>
+              <p class="pera">In the land of Palestine, amidst the turmoil of war, lives are engulfed in suffering. Innocent civilians become casualties of war, losing loved ones, homes, and the hope of survival. Each displaced person bears witness to a tragedy.</p>
+              <br>
+              <p class="pera">The pain of the Palestinian war is indescribable, but we can change it with action. Let's extend a hand to those suffering and bring them warmth and hope. Together, let's protect the beauty that existed before the flames of war consumed it.</p>
+              <br>
+              <p class="pera">According to the International Red Cross, the Palestinian war has displaced thousands, in dire need of humanitarian assistance. The war brings not only physical harm but also inflicts wounds on people's souls.</p>
+              <br>
+              <p class="pera">We need your help and support to assist Palestinian refugees. Let's provide them with aid to rebuild homes and restore confidence. Your donations will bring hope for survival, let's protect the warmth and love of humanity together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End-of Testimonial -->
 
-            var body = document.getElementsByTagName("body")[0];
-            body.addEventListener("mousedown", function (ev) {
-                ev.preventDefault();
-            });
-            body.addEventListener("click", function () {
-                setRandomColor();
-            }, false);
-        };
-    </script>
+    <!-- Testimonial S t a r t-->
+    <section class="testimonial-section-three section-padding">
+      <div class="container">
+        <div class="row gy-24 align-items-center">
+          <div class="col-xl-6">
+            <!-- Section Tittle -->
+            <div class="section-tittle">
+              <span class="sub-tittle text-capitalize font-600">Moving Forward Together</span>
+              <h2 class="title font-700">Bringing Hope to Palestinian Refugees</h2>
+              <p class="pera">Amidst the smoke of the Palestinian war, each displaced person carries endless pain and helplessness. They've lost homes, loved ones, and the hope for the future. Yet, even in despair, they cling to life, waiting for a glimmer of warmth.</p>
+              <br>
+              <p class="pera">Palestinian refugees need our help; let's bring them hope and strength. Let's fill the void left by war with love and warmth, let's move forward together and create a brighter future.</p>
+              <br>
+              <p class="pera">According to UNICEF, the Palestinian war has left many children without families and suffering from psychological trauma. They urgently need humanitarian assistance and counseling.</p>
+              <br>
+              <p class="pera">We earnestly appeal for your donations and support to provide Palestinian refugees with hope for survival and the power to rebuild. Let's contribute to peace and humanitarianism together, making love the most beautiful scenery in war.</p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-9">
+            <div class="position-relative">
+              <div class="testimonial-slider-three-active flex">
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/3/1.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/3/2.jpg" alt="image">
+                </div>
+                <div class="testimonial-images">
+                  <img class="w-100" src="assets/images/palestine/3/3.jpg" alt="image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- End-of Testimonial -->
+
+  </main>
+  <!-- Footer S t a r t -->
+  <footer>
+    <div class="footer-wrapper footer-bg-one">
+      <div class="container">
+        <div class="footer-menu">
+          <div class="col-lg-12">
+            <div class="menu-wrapper d-flex align-items-center justify-content-between">
+              <div class="header-left d-flex align-items-center justify-content-between">
+                <!-- Logo-->
+                <div class="logo">
+                  <a href="#"><img src="assets/images/logo/dark.png" alt="logo"></a>
+                </div>
+              </div>
+              <!-- Right button -->
+              <ul class="cart">
+                <li class="cart-list"><a href="#donate" class="donate-btn">Donate</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-line">
+      </div>
+      <!-- footer-bottom area -->
+      <div class="footer-bottom-area">
+        <div class="container">
+          <div class="footer-border">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="footer-copy-right text-center">
+                  <p class="pera">Copyright © 2024. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End-of Footer -->
+  <!-- Scroll Up  -->
+  <div class="progressParent" id="back-top">
+    <svg class="backCircle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <!-- Add an overlay element -->
+  <div class="overlay"></div>
+  <!-- jquery-->
+  <script src="assets/js/jquery-3.7.0.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap-5.3.0.min.js"></script>
+  <!-- Plugin -->
+  <script src="assets/js/plugin.js"></script>
+  <!-- Main js-->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
